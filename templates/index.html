@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FullFriends</title>
+</head>
+<body>
+	<h1>Poop</h1>
+		
+	{{friends}}
+	{% for friend in friends %}
+			<p>First Name: {{friend['first_name']}} <br> Last Name: {{friend['last_name']}}</p>
+			<form action='/friends/{{friend['id']}}/edit' method="get"><button>Edit {{friend['id']}}</button>
+			</form>
+	{% endfor %}
+		
+		<hr>
+		<h1>Make More Friends!</h1>
+		<form action='/friends' method='post'>
+			First Name:<input type="text" name="first_name" id="first_name"><br>
+			Last Name:<input type="text" name="last_name" id="last_name"><br>
+			<button>Create!</button>
+		</form>
+
+</body>
+</html>
